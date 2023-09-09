@@ -5,7 +5,8 @@
 #include<stdio.h>
 
 /**
- * main - main function 
+ *main - start of program
+ *
  * Return: always 0(success)
  */
 int main(void)
