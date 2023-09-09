@@ -5,9 +5,8 @@
 #include<stdio.h>
 
 /**
- * main - main function
- *
- * return: always 0
+ * main - main function 
+ * Return: always 0(success)
  */
 int main(void)
 {
@@ -27,6 +26,9 @@ int main(void)
 	else
 	{
 		printf("%d is negative\n", n);
-}
+
+	printf("\n");
+	}
 	return (0);
 }
+
