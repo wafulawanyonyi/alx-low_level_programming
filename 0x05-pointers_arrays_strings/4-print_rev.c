@@ -1,38 +1,37 @@
-/* reverse_string.c */
+/* print_reverse.c */
 
 #include "main.h"
 
 /**
- * rev_string - Reverses a string
+ * print_rev - Prints a string in reverse followed by a new line
  * @s: The input string
  *
- * Description: This function reverses a string.
+ * Description: This function prints a string in reverse order.
  */
-void rev_string(char *s)
+void print_rev(char *s)
 {
-	if (s == NULL)
-		return;
+    int length = 0;
+    char *end = s;
 
-	int length = 0;
-	char *end = s;
+    if (s == NULL)
+        return;
 
-	/* Calculate the length of the string */
-	while (*end != '\0')
-	{
-		length++;
-		end++;
-	}
+    /* Calculate the length of the string */
+    while (*end != '\0')
+    {
+        length++;
+        end++;
+    }
 
-	end--; /* Point to the last character before the null terminator */
+    end--; /* Point to the last character before the null terminator */
 
-	/* Swap characters from the beginning and end of the string */
-	while (s < end)
-	{
-		char temp = *s;
-		*s = *end;
-		*end = temp;
-		s++;
-		end--;
-	}
+    /* Print characters from the end to the beginning */
+    while (end >= s)
+    {
+        _putchar(*end); /* Print each character in reverse order */
+        end--;
+    }
+
+    _putchar('\n'); /* Print a newline after the reversed string */
 }
 
