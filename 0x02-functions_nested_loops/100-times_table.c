@@ -1,6 +1,4 @@
-#include <stdio.h>
-
-void print_times_table(int n);
+#include "main.h"
 
 /**
  * print_times_table - Print the times table for a given number up to 15 times.
@@ -8,30 +6,27 @@ void print_times_table(int n);
  *
  * This function prints the times table for the given number from 0 to 15.
  */
-
 void print_times_table(int n) {
-	int i;
+    if (n < 0 || n > 15)
+        return;
 
-	if (n < 0 || n > 15) {
-		printf("n is out of valid range (0 to 15).\n");
-		return;
-	}
+    int i;
+    int result;
+    for (i = 0; i <= 15; i++) {
+        result = n * i;
 
-	printf("Times Table for %d:\n", n);
+        if (result < 10)
+            _putchar(result + '0');
+        else {
+            _putchar((result / 10) + '0');
+            _putchar((result % 10) + '0');
+        }
 
-	for (i = 0; i <= 15; i++) {
-		printf("%d x %d = %d\n", i, n, i * n);
-	}
-}
-
-int main() {
-	int n;
-
-	printf("Enter a value for n: ");
-	scanf("%d", &n);
-
-	print_times_table(n);
-
-	return 0;
+        if (i < 15) {
+            _putchar(',');
+            _putchar(' ');
+        }
+    }
+    _putchar('\n');
 }
 
