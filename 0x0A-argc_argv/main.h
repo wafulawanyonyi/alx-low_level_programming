@@ -8,6 +8,6 @@ int multiply(int a, int b);
 int _putchar(char c);
 void print_arguments(int argc, char *argv[]);
 int main(int argc, char *argv[]);
-
+int calculate_min_coins(int cents);
 #endif
 
