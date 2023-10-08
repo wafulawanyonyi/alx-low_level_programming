@@ -1,47 +1,43 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * main - Entry point of the program
- * @argc: The number of arguments
- * @argv: An array of argument strings
- *
- * Return: Always 0 (success)
- */
-int main(int argc, char *argv[])
-{
-    print_arguments(argc, argv);
-    return 0;
-}
-
-/**
- * _putchar - Writes a character to the standard output (stdout)
- * @c: The character to write
+ * _putchar - Writes a character to stdout
+ * @c: The character to print
  *
  * Return: 1 on success, -1 on error
  */
 int _putchar(char c)
 {
-    return putchar(c);
+	return write(1, &c, 1);
 }
 
 /**
- * print_arguments - Prints all arguments received, one per line
+ * print_arguments - Prints all arguments received
  * @argc: The number of arguments
- * @argv: An array of argument strings
+ * @argv: Array of argument strings
  */
 void print_arguments(int argc, char *argv[])
 {
-    int i;
+	int i;
 
-    for (i = 0; i < argc; i++)
-    {
-        int j = 0;
-        while (argv[i][j] != '\0')
-        {
-            _putchar(argv[i][j]);
-            j++;
-        }
-        _putchar('\n');
-    }
+	for (i = 0; i < argc; i++)
+	{
+		int j = 0;
+
+		while (argv[i][j] != '\0')
+		{
+			_putchar(argv[i][j]);
+			j++;
+		}
+		_putchar('\n');
+	}
+}
+
+int main(int argc, char *argv[])
+{
+	print_arguments(argc, argv);
+
+	return 0;
 }
 
